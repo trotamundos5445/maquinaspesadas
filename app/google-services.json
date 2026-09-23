@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "74321833127",
+    "project_id": "miprimeraapp-a7681",
+    "storage_bucket": "miprimeraapp-a7681.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:74321833127:android:01bae4e3e18d2e804bff82",
+        "android_client_info": {
+          "package_name": "com.example.maquinaspesadas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBge8ncZJd7HxtOo8-lvQhjS3xIzdJLTnI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_Clientes">
+
+    <ImageView
+        android:id="@+id/imgFondoCliente"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo1" />
+
+    <TextView
+        android:id="@+id/txtvRutCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="RUT del cliente:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtRutCliente"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ingrese RUT"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvRutCliente"
+        app:layout_constraintTop_toBottomOf="@+id/txtvRutCliente" />
+
+    <TextView
+        android:id="@+id/txtvNombreEmpresa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Nombre de la empresa:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRutCliente"
+        app:layout_constraintTop_toBottomOf="@+id/txtRutCliente" />
+
+    <EditText
+        android:id="@+id/txtEmpresa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ingrese empresa"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvNombreEmpresa"
+        app:layout_constraintTop_toBottomOf="@+id/txtvNombreEmpresa" />
+
+    <TextView
+        android:id="@+id/txtvTelefono"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Teléfono:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtEmpresa"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmpresa" />
+
+    <EditText
+        android:id="@+id/txtTelefono"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ingrese teléfono"
+        android:inputType="phone"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/txtvTelefono" />
+
+    <TextView
+        android:id="@+id/txtvCorreo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Correo:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtTelefono"
+        app:layout_constraintTop_toBottomOf="@+id/txtTelefono" />
+
+    <EditText
+        android:id="@+id/txtCorreo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="ejemplo@correo.com"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvCorreo"
+        app:layout_constraintTop_toBottomOf="@+id/txtvCorreo" />
+
+    <TextView
+        android:id="@+id/txtvDireccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Dirección de la obra:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtCorreo"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreo" />
+
+    <EditText
+        android:id="@+id/txtDireccionObra"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ingrese dirección de obra"
+        android:inputType="text"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvDireccion"
+        app:layout_constraintTop_toBottomOf="@+id/txtvDireccion" />
+
+    <Button
+        android:id="@+id/btnGuardarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#090101"
+        android:text="Guardar"
+        app:layout_constraintStart_toStartOf="@+id/txtDireccionObra"
+        app:layout_constraintTop_toBottomOf="@+id/txtDireccionObra" />
+
+    <Button
+        android:id="@+id/btnEliminarCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#090101"
+        android:text="Eliminar"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardarCliente"
+        app:layout_constraintTop_toTopOf="@+id/btnGuardarCliente" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewClientes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverCliente"
+        app:layout_constraintEnd_toEndOf="@+id/txtDireccionObra"
+        app:layout_constraintStart_toStartOf="@+id/btnGuardarCliente"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarCliente" />
+
+    <Button
+        android:id="@+id/btnVolverCliente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#090101"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtDireccionObra" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
