@@ -46,9 +46,11 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.material)
 
-    // Firebase
+    // Firebase (versiones administradas por Firebase BoM)
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.firestore)
+    implementation(libs.firebase.auth)
+    implementation(libs.firebase.analytics)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -8,7 +8,7 @@
     tools:context=".activity_Maquinarias">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imgFondoMaquinarias"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -16,7 +16,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@drawable/fondo4" />
 
     <TextView
         android:id="@+id/txtvNombreMaquina"

@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.firebase.auth.FirebaseAuth
 
 class activity_1 : AppCompatActivity() {
 
@@ -21,10 +22,11 @@ class activity_1 : AppCompatActivity() {
             insets
         }
 
+        title = getUsuarioActual()
+
         val btnMaquinas = findViewById<Button>(R.id.btnMaquinarias)
         val btnClientes = findViewById<Button>(R.id.btnClientes)
         val btnArriendos = findViewById<Button>(R.id.btnArriendos)
-        val btnVolver = findViewById<Button>(R.id.btnVolver1)
 
         btnMaquinas.setOnClickListener {
             val intent = Intent(this, activity_Maquinarias::class.java)
@@ -41,10 +43,18 @@ class activity_1 : AppCompatActivity() {
             startActivity(intent)
         }
 
-        btnVolver.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+        findViewById<Button>(R.id.btnCerrarSesion).setOnClickListener {
+            cerrarSesion()
             finish()
         }
+    }
+
+    fun cerrarSesion() {
+        FirebaseAuth.getInstance().signOut()
+    }
+
+    private fun getUsuarioActual(): String {
+        val user = FirebaseAuth.getInstance().currentUser
+        return user?.email ?: "Sin sesión"
     }
 }

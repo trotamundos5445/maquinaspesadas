@@ -46,11 +46,11 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnVolver1"
+        android:id="@+id/btnCerrarSesion"
         android:layout_width="208dp"
         android:layout_height="45dp"
         android:backgroundTint="#1B0202"
-        android:text="Volver al menu principal"
+        android:text="cerrar sesion"
         app:layout_anchor="@+id/imageView2"
         app:layout_anchorGravity="bottom|center" />
 
