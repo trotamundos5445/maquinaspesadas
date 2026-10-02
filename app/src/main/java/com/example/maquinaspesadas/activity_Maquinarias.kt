@@ -10,6 +10,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.firestore.FirebaseFirestore
 
 class activity_Maquinarias : AppCompatActivity() {
@@ -66,6 +67,12 @@ class activity_Maquinarias : AppCompatActivity() {
                 db.collection("maquinarias").document(id)
                     .set(maquinaData)
                     .addOnSuccessListener {
+                        val bundle = Bundle().apply {
+                            putString("nombre_maquina", nombre)
+                            putString("categoria", categoria)
+                        }
+                        FirebaseAnalytics.getInstance(this).logEvent("guardar_maquinaria", bundle)
+
                         Toast.makeText(this, "¡Maquinaria guardada con éxito!", Toast.LENGTH_SHORT).show()
                         txtNombre.text.clear()
                         txtCategoria.text.clear()

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_Usuarios">
+
+    <ImageView
+        android:id="@+id/imgFondoUsuarios"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fondo1" />
+
+    <TextView
+        android:id="@+id/txtvNombreUsuarioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Nombre del Usuario:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNombreUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Ingrese nombre"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvNombreUsuarioLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtvNombreUsuarioLabel" />
+
+    <TextView
+        android:id="@+id/txtvCorreoUsuarioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Correo Electrónico:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtNombreUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreUsuario" />
+
+    <EditText
+        android:id="@+id/txtCorreoUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="correo@gmail.com"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvCorreoUsuarioLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtvCorreoUsuarioLabel" />
+
+    <TextView
+        android:id="@+id/txtvRolUsuarioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Rol (Admin, Cliente, etc.):"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtCorreoUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtCorreoUsuario" />
+
+    <EditText
+        android:id="@+id/txtRolUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Cliente / Admin / Operador"
+        android:inputType="text"
+        android:text="Cliente"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvRolUsuarioLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtvRolUsuarioLabel" />
+
+    <TextView
+        android:id="@+id/txtvContrasenaUsuarioLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Contraseña para acceso:"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/txtRolUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtRolUsuario" />
+
+    <EditText
+        android:id="@+id/txtContrasenaUsuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Mayúscula, minúscula y símbolo (mín. 6)"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#444444"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txtvContrasenaUsuarioLabel"
+        app:layout_constraintTop_toBottomOf="@+id/txtvContrasenaUsuarioLabel" />
+
+    <Button
+        android:id="@+id/btnGuardarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#1B0202"
+        android:text="Crear"
+        app:layout_constraintStart_toStartOf="@+id/txtContrasenaUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaUsuario" />
+
+    <Button
+        android:id="@+id/btnModificarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#1B0202"
+        android:text="Modificar"
+        app:layout_constraintStart_toEndOf="@+id/btnGuardarUsuario"
+        app:layout_constraintTop_toTopOf="@+id/btnGuardarUsuario" />
+
+    <Button
+        android:id="@+id/btnEliminarUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#1B0202"
+        android:text="Eliminar"
+        app:layout_constraintStart_toEndOf="@+id/btnModificarUsuario"
+        app:layout_constraintTop_toTopOf="@+id/btnModificarUsuario" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewUsuarios"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolverUsuario"
+        app:layout_constraintEnd_toEndOf="@+id/txtContrasenaUsuario"
+        app:layout_constraintStart_toStartOf="@+id/btnGuardarUsuario"
+        app:layout_constraintTop_toBottomOf="@+id/btnGuardarUsuario" />
+
+    <Button
+        android:id="@+id/btnVolverUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#1B0202"
+        android:text="Volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/txtContrasenaUsuario" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

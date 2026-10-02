@@ -27,6 +27,7 @@ class activity_1 : AppCompatActivity() {
         val btnMaquinas = findViewById<Button>(R.id.btnMaquinarias)
         val btnClientes = findViewById<Button>(R.id.btnClientes)
         val btnArriendos = findViewById<Button>(R.id.btnArriendos)
+        val btnUsuarios = findViewById<Button>(R.id.btnUsuarios)
 
         btnMaquinas.setOnClickListener {
             val intent = Intent(this, activity_Maquinarias::class.java)
@@ -40,6 +41,11 @@ class activity_1 : AppCompatActivity() {
 
         btnArriendos.setOnClickListener {
             val intent = Intent(this, activity_Alquileres::class.java)
+            startActivity(intent)
+        }
+
+        btnUsuarios.setOnClickListener {
+            val intent = Intent(this, activity_Usuarios::class.java)
             startActivity(intent)
         }
 

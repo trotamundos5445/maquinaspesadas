@@ -62,14 +62,18 @@ class activity_Registrar : AppCompatActivity() {
     }
 
     private fun crearRegistro() {
-        val txtCorreo = findViewById<EditText>(R.id.txtNombreRegistro)
+        val txtNombre = findViewById<EditText>(R.id.txtNombreCompleto)
+        val txtCorreo = findViewById<EditText>(R.id.txtCorreoRegistro)
         val txtPass = findViewById<EditText>(R.id.txtContrasenaRegistrar)
+        val txtRol = findViewById<EditText>(R.id.txtRolRegistro)
 
+        val nombre = txtNombre.text.toString().trim()
         val correo = txtCorreo.text.toString().trim()
         val pass = txtPass.text.toString().trim()
+        val rol = if (txtRol.text.toString().trim().isNotEmpty()) txtRol.text.toString().trim() else "Cliente"
 
-        if (correo.isEmpty() || pass.isEmpty()) {
-            Toast.makeText(this, "Por favor ingrese correo y contraseña", Toast.LENGTH_SHORT).show()
+        if (nombre.isEmpty() || correo.isEmpty() || pass.isEmpty()) {
+            Toast.makeText(this, "Por favor ingrese su nombre, correo y contraseña", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -97,8 +101,8 @@ class activity_Registrar : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(TAG, "createUserWithEmail:success")
-                    crearUsuario()
-                    Toast.makeText(this, "¡Usuario creado con éxito!", Toast.LENGTH_SHORT).show()
+                    crearUsuario(nombre, correo, rol)
+                    Toast.makeText(this, "¡Usuario registrado con éxito!", Toast.LENGTH_SHORT).show()
                     finish()
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.exception)
@@ -114,12 +118,11 @@ class activity_Registrar : AppCompatActivity() {
             }
     }
 
-    private fun crearUsuario() {
-        val txtNombre = findViewById<EditText>(R.id.txtNombreRegistro)
-
+    private fun crearUsuario(nombre: String, correo: String, rol: String) {
         val user = hashMapOf(
-            "nombre" to txtNombre.text.toString(),
-            "correo" to getUsuarioActual()
+            "nombre" to nombre,
+            "correo" to correo,
+            "rol" to rol
         )
 
         db.collection("Usuarios").add(user)

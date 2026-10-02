@@ -43,6 +43,13 @@
             android:backgroundTint="#1B0202"
             android:text="Alquileres" />
 
+        <Button
+            android:id="@+id/btnUsuarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#1B0202"
+            android:text="Usuarios" />
+
     </LinearLayout>
 
     <Button

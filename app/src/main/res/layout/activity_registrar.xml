@@ -18,88 +18,134 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fondo1" />
 
-    <LinearLayout
-        android:id="@+id/containerRegistrar"
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:background="#B3000000"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/txtvTituloRegistro"
+        <LinearLayout
+            android:id="@+id/containerRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:text="Formulario de Registro"
-            android:textAlignment="center"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:layout_margin="20dp"
+            android:background="#B3000000"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <TextView
-            android:id="@+id/txtvCorreoRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Correo Electrónico:"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            <TextView
+                android:id="@+id/txtvTituloRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Formulario de Registro"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/txtNombreRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:ems="10"
-            android:hint="correo@gmail.com"
-            android:inputType="textEmailAddress"
-            android:textColor="@android:color/white"
-            android:textColorHint="#CCCCCC" />
+            <TextView
+                android:id="@+id/txtvNombreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nombre Completo:"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtvContrasenaRegistro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Contraseña:"
-            android:textColor="@android:color/white"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            <EditText
+                android:id="@+id/txtNombreCompleto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:ems="10"
+                android:hint="Ingrese su nombre"
+                android:inputType="textPersonName"
+                android:textColor="@android:color/white"
+                android:textColorHint="#CCCCCC" />
 
-        <EditText
-            android:id="@+id/txtContrasenaRegistrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:ems="10"
-            android:hint="Mayúscula, minúscula y símbolo (mínimo 6)."
-            android:inputType="textPassword"
-            android:textColor="@android:color/white"
-            android:textColorHint="#CCCCCC" />
+            <TextView
+                android:id="@+id/txtvCorreoRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Correo Electrónico:"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnGuardarRegistrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#222222"
-            android:text="Crear Usuario"
-            android:textColor="@android:color/white" />
+            <EditText
+                android:id="@+id/txtCorreoRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:ems="10"
+                android:hint="correo@gmail.com"
+                android:inputType="textEmailAddress"
+                android:textColor="@android:color/white"
+                android:textColorHint="#CCCCCC" />
 
-        <Button
-            android:id="@+id/btnVolverRegistrar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#222222"
-            android:text="Volver"
-            android:textColor="@android:color/white" />
+            <TextView
+                android:id="@+id/txtvContrasenaRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contraseña:"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-    </LinearLayout>
+            <EditText
+                android:id="@+id/txtContrasenaRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:ems="10"
+                android:hint="Mayúscula, minúscula y símbolo (mín. 6)"
+                android:inputType="textPassword"
+                android:textColor="@android:color/white"
+                android:textColorHint="#CCCCCC" />
 
+            <TextView
+                android:id="@+id/txtvRolRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rol del Usuario:"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtRolRegistro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:hint="Cliente / Operador / Admin"
+                android:inputType="text"
+                android:text="Cliente"
+                android:textColor="@android:color/white"
+                android:textColorHint="#CCCCCC" />
+
+            <Button
+                android:id="@+id/btnGuardarRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:backgroundTint="#222222"
+                android:text="Crear Usuario"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/btnVolverRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#222222"
+                android:text="Volver"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
