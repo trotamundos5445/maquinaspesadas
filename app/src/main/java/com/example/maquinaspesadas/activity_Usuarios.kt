@@ -52,6 +52,16 @@ class activity_Usuarios : AppCompatActivity() {
         rvUsuarios.layoutManager = LinearLayoutManager(this)
         rvUsuarios.adapter = listAdapter
 
+        listAdapter.onItemClick = { item ->
+            val usuario = item.rawData as? UsuarioData
+            if (usuario != null) {
+                txtNombre.setText(usuario.nombre)
+                txtCorreo.setText(usuario.correo)
+                txtRol.setText(usuario.rol)
+                Toast.makeText(this, "Cargado: ${usuario.nombre}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         cargarUsuariosEnLista()
 
         btnGuardar.setOnClickListener {
@@ -100,7 +110,7 @@ class activity_Usuarios : AppCompatActivity() {
                             }
                             FirebaseAnalytics.getInstance(this).logEvent("crear_usuario", bundle)
 
-                            Toast.makeText(this, "¡Usuario y contraseña registrados con éxito para acceder!", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "¡Usuario registrado con éxito!", Toast.LENGTH_SHORT).show()
                             txtNombre.text.clear()
                             txtCorreo.text.clear()
                             txtPass.text.clear()
@@ -190,11 +200,14 @@ class activity_Usuarios : AppCompatActivity() {
                         val correo = doc.getString("correo") ?: doc.getString("Correo") ?: "Sin correo"
                         val rol = doc.getString("rol") ?: doc.getString("Rol") ?: "Cliente"
 
+                        val usuario = UsuarioData(id = doc.id, nombre = nombre, correo = correo, rol = rol)
+
                         items.add(
                             ItemData(
                                 titulo = nombre,
                                 subtitulo = "Correo: $correo | Rol: $rol",
-                                detalle = ""
+                                detalle = "",
+                                rawData = usuario
                             )
                         )
                     }

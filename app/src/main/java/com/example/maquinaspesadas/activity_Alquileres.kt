@@ -71,6 +71,24 @@ class activity_Alquileres : AppCompatActivity() {
         rvAlquileres.layoutManager = LinearLayoutManager(this)
         rvAlquileres.adapter = listAdapter
 
+        listAdapter.onItemClick = { item ->
+            val alquiler = item.rawData as? Alquiler
+            if (alquiler != null) {
+                txtDias.setText(alquiler.diasArriendo.toString())
+
+                val indexMaq = listaMaquinas.indexOfFirst { it.nombre.equals(alquiler.nombreMaquina, ignoreCase = true) }
+                if (indexMaq >= 0) spnMaquinas.setSelection(indexMaq)
+
+                val indexCli = listaClientes.indexOfFirst { it.rut.equals(alquiler.rutCliente, ignoreCase = true) }
+                if (indexCli >= 0) spnClientes.setSelection(indexCli)
+
+                val totalFmt = ChileFormatUtils.formatPesos(alquiler.totalPagar)
+                lblTotal.text = "Total a Pagar: $$totalFmt"
+
+                Toast.makeText(this, "Cargado: ${alquiler.nombreMaquina} (${alquiler.rutCliente})", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         cargarMaquinasEnSpinner(spnMaquinas)
         cargarClientesEnSpinner(spnClientes)
         cargarAlquileresEnLista()
@@ -178,7 +196,8 @@ class activity_Alquileres : AppCompatActivity() {
                             ItemData(
                                 titulo = "${alquiler.nombreMaquina} -> ${alquiler.rutCliente}",
                                 subtitulo = "Días: ${alquiler.diasArriendo} | Total: $$totalFmt",
-                                detalle = "Fecha: ${alquiler.fecha}"
+                                detalle = "Fecha: ${alquiler.fecha}",
+                                rawData = alquiler
                             )
                         )
                     }

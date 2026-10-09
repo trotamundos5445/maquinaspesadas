@@ -44,6 +44,16 @@ class activity_Maquinarias : AppCompatActivity() {
 
         ChileFormatUtils.setupPriceAutoFormat(txtTarifa)
 
+        listAdapter.onItemClick = { item ->
+            val maquina = item.rawData as? Maquina
+            if (maquina != null) {
+                txtNombre.setText(maquina.nombre)
+                txtCategoria.setText(maquina.categoria)
+                txtTarifa.setText(ChileFormatUtils.formatPesos(maquina.tarifaPorHora))
+                Toast.makeText(this, "Cargado: ${maquina.nombre}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         cargarMaquinariasEnLista()
 
         btnGuardar.setOnClickListener {
@@ -104,6 +114,8 @@ class activity_Maquinarias : AppCompatActivity() {
                         if (eliminados > 0) {
                             Toast.makeText(this, "Maquinaria eliminada con éxito", Toast.LENGTH_SHORT).show()
                             txtNombre.text.clear()
+                            txtCategoria.text.clear()
+                            txtTarifa.text.clear()
                         } else {
                             Toast.makeText(this, "No se encontró la maquinaria '$nombreAEliminar'", Toast.LENGTH_SHORT).show()
                         }
@@ -136,12 +148,15 @@ class activity_Maquinarias : AppCompatActivity() {
                         val categoria = doc.getString("Categoria") ?: doc.getString("categoria") ?: "Sin categoría"
                         val tarifa = doc.getDouble("Tarifa") ?: doc.getDouble("tarifa") ?: 0.0
 
+                        val maquina = Maquina(id = doc.id, nombre = nombre, categoria = categoria, tarifaPorHora = tarifa)
                         val tarifaFormateada = ChileFormatUtils.formatPesos(tarifa)
+
                         items.add(
                             ItemData(
                                 titulo = nombre,
                                 subtitulo = "Categoría: $categoria",
-                                detalle = "Tarifa: $$tarifaFormateada / hora"
+                                detalle = "Tarifa: $$tarifaFormateada / hora",
+                                rawData = maquina
                             )
                         )
                     }

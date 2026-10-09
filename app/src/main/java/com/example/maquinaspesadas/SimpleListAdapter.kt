@@ -9,11 +9,14 @@ import androidx.recyclerview.widget.RecyclerView
 data class ItemData(
     val titulo: String,
     val subtitulo: String,
-    val detalle: String = ""
+    val detalle: String = "",
+    val rawData: Any? = null
 )
 
-class SimpleListAdapter(private val items: MutableList<ItemData> = mutableListOf()) :
-    RecyclerView.Adapter<SimpleListAdapter.ViewHolder>() {
+class SimpleListAdapter(
+    private val items: MutableList<ItemData> = mutableListOf(),
+    var onItemClick: ((ItemData) -> Unit)? = null
+) : RecyclerView.Adapter<SimpleListAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val txtTitulo: TextView = view.findViewById(R.id.txtTituloItem)
@@ -36,6 +39,10 @@ class SimpleListAdapter(private val items: MutableList<ItemData> = mutableListOf
             holder.txtDetalle.text = item.detalle
         } else {
             holder.txtDetalle.visibility = View.GONE
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
         }
     }
 

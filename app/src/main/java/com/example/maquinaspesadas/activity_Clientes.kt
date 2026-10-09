@@ -54,6 +54,18 @@ class activity_Clientes : AppCompatActivity() {
         ChileFormatUtils.setupRutAutoFormat(txtRut)
         ChileFormatUtils.setupPhoneAutoFormat(txtTelefono)
 
+        listAdapter.onItemClick = { item ->
+            val cliente = item.rawData as? Cliente
+            if (cliente != null) {
+                txtRut.setText(cliente.rut)
+                txtEmpresa.setText(cliente.nombreEmpresa)
+                txtTelefono.setText(cliente.telefono)
+                txtCorreo.setText(cliente.correo)
+                txtDireccion.setText(cliente.direccionObra)
+                Toast.makeText(this, "Cargado: ${cliente.nombreEmpresa}", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         cargarClientesEnLista()
 
         btnGuardar.setOnClickListener {
@@ -147,7 +159,8 @@ class activity_Clientes : AppCompatActivity() {
                             ItemData(
                                 titulo = "${cliente.rut} - ${cliente.nombreEmpresa}",
                                 subtitulo = "Tel: ${cliente.telefono} | Correo: ${cliente.correo}",
-                                detalle = "Obra: ${cliente.direccionObra}"
+                                detalle = "Obra: ${cliente.direccionObra}",
+                                rawData = cliente
                             )
                         )
                     }
