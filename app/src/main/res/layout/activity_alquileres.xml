@@ -18,148 +18,203 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/fondo3" />
 
-    <TextView
-        android:id="@+id/txtvSeleccionarMaquina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Seleccionar Maquinaria:"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Spinner
-        android:id="@+id/spnMaquinas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtvSeleccionarMaquina"
-        app:layout_constraintTop_toBottomOf="@+id/txtvSeleccionarMaquina" />
-
-    <TextView
-        android:id="@+id/txtvSeleccionarCliente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Seleccionar Cliente:"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/spnMaquinas"
-        app:layout_constraintTop_toBottomOf="@+id/spnMaquinas" />
-
-    <Spinner
-        android:id="@+id/spnClientes"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtvSeleccionarCliente"
-        app:layout_constraintTop_toBottomOf="@+id/txtvSeleccionarCliente" />
-
-    <TextView
-        android:id="@+id/txtvDiasAlquiler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Días de alquiler:"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/spnClientes"
-        app:layout_constraintTop_toBottomOf="@+id/spnClientes" />
-
-    <EditText
-        android:id="@+id/txtDiasAlquiler"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Ingrese cantidad de días"
-        android:inputType="number"
-        android:textColor="#000000"
-        android:textColorHint="#444444"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtvDiasAlquiler"
-        app:layout_constraintTop_toBottomOf="@+id/txtvDiasAlquiler" />
-
-    <Button
-        android:id="@+id/btnCalcularTotal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:backgroundTint="#1B0202"
-        android:text="Calcular Total"
-        app:layout_constraintStart_toStartOf="@+id/txtDiasAlquiler"
-        app:layout_constraintTop_toBottomOf="@+id/txtDiasAlquiler" />
-
-    <TextView
-        android:id="@+id/txtvTotalCalculadoLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Precio Total:"
-        android:textColor="#8E8D8D"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/btnCalcularTotal"
-        app:layout_constraintTop_toBottomOf="@+id/btnCalcularTotal" />
-
-    <TextView
-        android:id="@+id/txtTotalCalculado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="Total a Pagar: $0"
-        android:textColor="#8E8D8D"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/txtvTotalCalculadoLabel"
-        app:layout_constraintTop_toBottomOf="@+id/txtvTotalCalculadoLabel" />
-
-    <Button
-        android:id="@+id/btnGuardarAlquiler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#1B0202"
-        android:text="Guardar"
-        app:layout_constraintStart_toStartOf="@+id/txtTotalCalculado"
-        app:layout_constraintTop_toBottomOf="@+id/txtTotalCalculado" />
-
-    <Button
-        android:id="@+id/btnEliminarAlquiler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="#1B0202"
-        android:text="Eliminar"
-        app:layout_constraintStart_toEndOf="@+id/btnGuardarAlquiler"
-        app:layout_constraintTop_toTopOf="@+id/btnGuardarAlquiler" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewAlquileres"
+    <ScrollView
+        android:id="@+id/scrollForm"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="12dp"
+        android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/btnVolverAlquiler"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/btnGuardarAlquiler"
-        app:layout_constraintTop_toBottomOf="@+id/btnGuardarAlquiler" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card"
+                android:elevation="6dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="GESTIÓN DE ALQUILERES"
+                    android:textColor="#F59E0B"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtvSeleccionarMaquina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar Maquinaria:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnMaquinas"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_spinner"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/txtvSeleccionarCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seleccionar Cliente:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <Spinner
+                    android:id="@+id/spnClientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_spinner"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/txtvDiasAlquiler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Días de alquiler:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/txtDiasAlquiler"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/bg_input_field"
+                    android:ems="10"
+                    android:hint="Cantidad de días"
+                    android:inputType="number"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAAAAA"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCalcularTotal"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#333333"
+                    android:text="Calcular Total"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:cornerRadius="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:background="#22000000"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/txtvTotalCalculadoLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Precio Total:"
+                        android:textColor="#AAAAAA"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/txtTotalCalculado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Total a Pagar: $0"
+                        android:textColor="#F59E0B"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnGuardarAlquiler"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#F59E0B"
+                        android:text="Guardar"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="10dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEliminarAlquiler"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="6dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#EF4444"
+                        android:text="Eliminar"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        app:cornerRadius="10dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="HISTORIAL DE ALQUILERES"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewAlquileres"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:nestedScrollingEnabled="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnVolverAlquiler"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#1B0202"
-        android:text="Volver"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="12dp"
+        android:backgroundTint="#222222"
+        android:text="Volver al Menú"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

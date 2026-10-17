@@ -15,50 +15,131 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/fondo1" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:fillViewport="true">
 
-        <Button
-            android:id="@+id/btnMaquinarias"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="#1B0202"
-            android:text="Maquinarias" />
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <Button
-            android:id="@+id/btnClientes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#1B0202"
-            android:text="Clientes" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_glass_card"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-        <Button
-            android:id="@+id/btnArriendos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#1B0202"
-            android:text="Alquileres" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PANEL DE CONTROL"
+                    android:textAlignment="center"
+                    android:textColor="#F59E0B"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/btnUsuarios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#1B0202"
-            android:text="Usuarios" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="Gestión de Maquinaria y Arriendos"
+                    android:textAlignment="center"
+                    android:textColor="#CCCCCC"
+                    android:textSize="13sp" />
 
-    </LinearLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMaquinarias"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#F59E0B"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Maquinarias"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_machinery"
+                    app:iconPadding="16dp"
+                    app:iconTint="#000000" />
 
-    <Button
-        android:id="@+id/btnCerrarSesion"
-        android:layout_width="208dp"
-        android:layout_height="45dp"
-        android:backgroundTint="#1B0202"
-        android:text="cerrar sesion"
-        app:layout_anchor="@+id/imageView2"
-        app:layout_anchorGravity="bottom|center" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClientes"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#F59E0B"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Clientes"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_clients"
+                    app:iconPadding="16dp"
+                    app:iconTint="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnArriendos"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#F59E0B"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Alquileres"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_rentals"
+                    app:iconPadding="16dp"
+                    app:iconTint="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnUsuarios"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginBottom="24dp"
+                    android:backgroundTint="#F59E0B"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Usuarios"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_users"
+                    app:iconPadding="16dp"
+                    app:iconTint="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCerrarSesion"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:backgroundTint="#EF4444"
+                    android:text="Cerrar Sesión"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_logout"
+                    app:iconGravity="textStart"
+                    app:iconPadding="12dp"
+                    app:iconTint="#FFFFFF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="amber_primary">#F59E0B</color>
+    <color name="amber_primary_dark">#D97706</color>
+    <color name="amber_accent">#FF9800</color>
+    <color name="dark_card_bg">#EB18181E</color>
+    <color name="dark_card_stroke">#33FFFFFF</color>
+    <color name="danger_red">#EF4444</color>
+    <color name="input_bg">#22000000</color>
+    <color name="input_stroke">#44FFFFFF</color>
+    <color name="text_hint">#AAAAAA</color>
 </resources>

@@ -31,111 +31,148 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="#B3000000"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="20dp">
 
-            <TextView
-                android:id="@+id/textView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="Bienvenido a nuestra app de gestión de maquinaria pesada. Aquí podrás administrar o arrendar una máquina pesada para tu trabajo."
-                android:textAlignment="center"
-                android:textColor="@android:color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:background="@drawable/bg_glass_card"
+                android:elevation="8dp"
+                android:orientation="vertical"
+                android:padding="24dp">
 
-            <TextView
-                android:id="@+id/textvNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Correo/Usuario:"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MAQUINARIAS PESADAS"
+                    android:textAlignment="center"
+                    android:textColor="#F59E0B"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/textNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:ems="10"
-                android:hint="correo@gmail.com"
-                android:inputType="textEmailAddress"
-                android:textColor="@android:color/white"
-                android:textColorHint="#CCCCCC" />
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="Bienvenido a nuestra app de gestión de maquinaria pesada. Administración y arriendo."
+                    android:textAlignment="center"
+                    android:textColor="#DDDDDD"
+                    android:textSize="13sp" />
 
-            <TextView
-                android:id="@+id/textvContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Contraseña:"
-                android:textColor="@android:color/white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textvNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Correo/Usuario:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-            <EditText
-                android:id="@+id/textContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:ems="10"
-                android:hint="Ingrese contraseña"
-                android:inputType="textPassword"
-                android:textColor="@android:color/white"
-                android:textColorHint="#CCCCCC" />
+                <EditText
+                    android:id="@+id/textNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="14dp"
+                    android:background="@drawable/bg_input_field"
+                    android:ems="10"
+                    android:hint="correo@gmail.com"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAAAAA"
+                    android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/btnInicio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#222222"
-                android:text="Iniciar Sesión"
-                android:textColor="@android:color/white" />
+                <TextView
+                    android:id="@+id/textvContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contraseña:"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/btnGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#FFFFFF"
-                android:drawableStart="@drawable/ic_google"
-                android:drawablePadding="12dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Continuar con Google"
-                android:textColor="#000000"
-                android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/textContrasena"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/bg_input_field"
+                    android:ems="10"
+                    android:hint="Ingrese contraseña"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="14dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#AAAAAA"
+                    android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/btnRegistrar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#333333"
-                android:text="Registrar"
-                android:textColor="@android:color/white" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnInicio"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#F59E0B"
+                    android:text="Iniciar Sesión"
+                    android:textColor="#000000"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp" />
 
-            <Button
-                android:id="@+id/btnCrash"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:backgroundTint="#880000"
-                android:text="Probar Crashlytics"
-                android:textColor="@android:color/white" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGoogle"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="Continuar con Google"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_google"
+                    app:iconGravity="textStart"
+                    app:iconPadding="12dp"
+                    app:iconTint="@null" />
 
-            <Button
-                android:id="@+id/btnSalir"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#111111"
-                android:text="Salir"
-                android:textColor="@android:color/white" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegistrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#333333"
+                    android:text="Registrar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCrash"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#EF4444"
+                    android:text="Probar Crashlytics"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSalir"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#222222"
+                    android:text="Salir"
+                    android:textColor="#CCCCCC"
+                    android:textSize="13sp"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
