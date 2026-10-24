@@ -49,6 +49,16 @@ class activity_1 : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.btnDiagCrash).setOnClickListener {
+            val intent = Intent(this, activity_DiagnosticoCrashlytics::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.btnDiagFCM).setOnClickListener {
+            val intent = Intent(this, activity_DiagnosticoFCM::class.java)
+            startActivity(intent)
+        }
+
         findViewById<Button>(R.id.btnCerrarSesion).setOnClickListener {
             cerrarSesion()
             finish()

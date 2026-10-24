@@ -19,7 +19,10 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
         remoteMessage.notification?.let {
             Log.d(TAG, "Message Notification Body: ${it.body}")
-            mostrarNotificacion(it.title ?: "Notificación", it.body ?: "")
+            val title = it.title ?: "Notificación"
+            val body = it.body ?: ""
+            mostrarNotificacion(title, body)
+            guardarUltimoMensaje(title, body)
         }
 
         if (remoteMessage.data.isNotEmpty()) {
@@ -28,6 +31,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             val body = remoteMessage.data["body"] ?: ""
             if (remoteMessage.notification == null && body.isNotEmpty()) {
                 mostrarNotificacion(title, body)
+                guardarUltimoMensaje(title, body)
             }
         }
     }
@@ -66,6 +70,14 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
 
         notificationManager.notify(System.currentTimeMillis().toInt(), notificationBuilder.build())
+    }
+
+    private fun guardarUltimoMensaje(title: String, body: String) {
+        val prefs = getSharedPreferences("fcm_prefs", Context.MODE_PRIVATE)
+        prefs.edit()
+            .putString("last_title", title)
+            .putString("last_body", body)
+            .apply()
     }
 
     companion object {

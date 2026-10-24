@@ -109,7 +109,7 @@
                     android:id="@+id/btnUsuarios"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginBottom="16dp"
                     android:backgroundTint="#F59E0B"
                     android:gravity="center_vertical|start"
                     android:paddingStart="20dp"
@@ -121,6 +121,38 @@
                     app:icon="@drawable/ic_users"
                     app:iconPadding="16dp"
                     app:iconTint="#000000" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDiagCrash"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#333333"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Diagnóstico Crashlytics"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_bug"
+                    app:iconPadding="16dp"
+                    app:iconTint="#FFFFFF" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDiagFCM"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#333333"
+                    android:gravity="center_vertical|start"
+                    android:paddingStart="20dp"
+                    android:text="Diagnóstico FCM"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    app:cornerRadius="12dp"
+                    app:icon="@drawable/ic_notification"
+                    app:iconPadding="16dp"
+                    app:iconTint="#FFFFFF" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnCerrarSesion"
