@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Regla para la colección de Clientes
+    match /clientes/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Alquileres
+    match /alquileres/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Maquinarias
+    match /maquinarias/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Usuarios
+    match /Usuarios/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+  }
+}
+
+================================================================================
+EXPLICACIÓN DE LAS REGLAS DE SEGURIDAD FIRESTORE
+Integrantes: Carlos Moreno & Saimon Daza
+================================================================================
+
+1. Colecciones Protegidas:
+   - /clientes/{documento}: Almacena los registros de clientes (RUT, Nombre Empresa, Teléfono, Correo, Dirección Obra).
+   - /alquileres/{documento}: Almacena los contratos de alquiler (Maquinaria, Cliente, Días, Tarifa Diaria, Total Pagar, Fecha).
+   - /maquinarias/{documento}: Catálogo de maquinarias pesadas disponibles.
+   - /Usuarios/{documento}: Perfiles de usuarios del sistema.
+
+2. Permisos y Accesos por Operación:
+   - Lectura (read): Permitida únicamente si el usuario se encuentra autenticado en Firebase Auth (request.auth != null).
+   - Creación (create): Permitida únicamente si el usuario está autenticado.
+   - Modificación (update): Permitida únicamente si el usuario está autenticado.
+   - Eliminación (delete): Permitida únicamente si el usuario está autenticado.
+
+3. Comportamiento frente a usuarios no autenticados:
+   - Si un usuario no autenticado (request.auth == null) intenta acceder, crear, modificar o borrar documentos en cualquiera de estas colecciones, Cloud Firestore bloqueará la operación inmediatamente arrojando un error de 'PERMISSION_DENIED'.

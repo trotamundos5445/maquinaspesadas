@@ -1,0 +1,45 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Regla para la colección de Clientes
+    match /clientes/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Alquileres
+    match /alquileres/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Maquinarias
+    match /maquinarias/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+
+    // Regla para la colección de Usuarios
+    match /Usuarios/{documento} {
+      allow read, create, update, delete: if request.auth != null;
+    }
+  }
+}
+
+================================================================================
+EXPLICACIÓN DE LAS REGLAS DE SEGURIDAD FIRESTORE
+================================================================================
+
+1. Colecciones Protegidas:
+   - /clientes/{documento}: Colección para la gestión de clientes.
+   - /alquileres/{documento}: Colección para la gestión de arriendos.
+   - /maquinarias/{documento}: Colección de catálogo de maquinarias.
+   - /Usuarios/{documento}: Colección de perfiles de usuarios.
+
+2. Permisos y Accesos:
+   - Lectura (read): Permitida a cualquier usuario autenticado en la app.
+   - Creación (create): Permitida a cualquier usuario autenticado.
+   - Modificación (update): Permitida a cualquier usuario autenticado.
+   - Eliminación (delete): Permitida a cualquier usuario autenticado.
+
+3. Comportamiento sin Autenticación:
+   - Si una solicitud proviene de un cliente anónimo o sin sesión iniciada (request.auth == null), Cloud Firestore bloquea el acceso de inmediato generando un error de 'PERMISSION_DENIED'.
