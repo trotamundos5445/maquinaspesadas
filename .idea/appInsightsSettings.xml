@@ -23,7 +23,7 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.example.maquinaspesadas" />
+                  <option name="appId" value="com.santotomas.maquinaspesadas" />
                   <option name="mobileSdkAppId" value="1:74321833127:android:01bae4e3e18d2e804bff82" />
                   <option name="projectId" value="miprimeraapp-a7681" />
                   <option name="projectNumber" value="74321833127" />

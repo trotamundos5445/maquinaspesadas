@@ -6,11 +6,11 @@ plugins {
 
 
 android {
-    namespace = "com.example.maquinaspesadas"
+    namespace = "com.santotomas.maquinaspesadas"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "com.example.maquinaspesadas"
+        applicationId = "com.santotomas.maquinaspesadas"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
